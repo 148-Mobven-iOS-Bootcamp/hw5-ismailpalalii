@@ -9,24 +9,31 @@ import UIKit
 import Hero
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-   
-    // MARK: - Add city name and image array
+    
+    // MARK: - Create city name and image array
     var cityName = [String]()
     var cityDescription = [String]()
     var selectedCityName = ""
+    var selectedCityDescription = ""
     var selectedCityImage = UIImage()
     var cityImage = [UIImage]()
-    
     @IBOutlet weak var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // MARK: - Call Hero Animation
+        navigationController?.hero.isEnabled = true
+        view.hero.isEnabled = true
+        view.hero.id = "test"
+        view.hero.modifiers = [.fade]
+
         arrayAddObject()
         navigationItem.title = "Ancient Cities Guide"
+    
     }
     
+    // MARK: - Add Array New Object
     func arrayAddObject() {
         cityName.append("Petra Antik Kenti, Ürdün")
         cityName.append("Göbeklitepe, Türkiye")
@@ -47,7 +54,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cityDescription.append("Tanrıların doğduğu yer anlamına gelen Teotihuacan, Mexico City’de yer alıyor. Efsaneye göre tanrıların oturup insanları yaratmak için plan yaptığı bu antik kentte çok fazla yazılı belgeye rastlanmaması, Teotihuacan’ın üzerindeki gizemi arttıran en önemli unsurlandan biri. MS 1. ve 7. yüzyıllar arasında kurulan antik kentin içerisinde bulunan Güneş ve Ay Piramidi arkeolojik açıdan büyük önem taşıyor.")
     }
     
-    
+    // MARK: - Create TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = cityName[indexPath.row]
@@ -56,5 +63,26 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cityName.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCityName = cityName[indexPath.row]
+        selectedCityImage = cityImage[indexPath.row]
+        selectedCityDescription = cityDescription[indexPath.row]
+        
+        
+        performSegue(withIdentifier: "toDetailScreen", sender: nil)
+       
+    }
+
+    // MARK: - Page Transtion
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailScreen" {
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.cityNames = selectedCityName
+            destinationVC.cityDescription = selectedCityDescription
+            destinationVC.images = selectedCityImage
+           
+        }
     }
 }

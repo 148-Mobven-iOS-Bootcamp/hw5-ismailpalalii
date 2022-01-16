@@ -35,6 +35,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Dz-WN-Bgr"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="JbM-f0-9sd" id="2Rj-xB-Vld"/>
                         <segue destination="7CY-fd-83U" kind="show" identifier="toDetailScreen" id="ugO-ja-eur"/>
@@ -60,35 +63,48 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bok-tb-1X0">
-                                <rect key="frame" x="16" y="492" width="382" height="126"/>
+                                <rect key="frame" x="16" y="492" width="382" height="354"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMc-fv-Lcg">
+                                <rect key="frame" x="64" y="436" width="286" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5vo-cT-NPS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7jI-tp-aN5" firstAttribute="centerX" secondItem="bZP-aA-77k" secondAttribute="centerX" id="F1Y-LJ-PPy"/>
+                            <constraint firstItem="oMc-fv-Lcg" firstAttribute="leading" secondItem="5vo-cT-NPS" secondAttribute="leading" constant="64" id="Q7B-vK-QfH"/>
                             <constraint firstItem="7jI-tp-aN5" firstAttribute="top" secondItem="5vo-cT-NPS" secondAttribute="top" constant="8" id="QLL-K8-LD0"/>
                             <constraint firstItem="Bok-tb-1X0" firstAttribute="leading" secondItem="5vo-cT-NPS" secondAttribute="leading" constant="16" id="S13-On-DLZ"/>
                             <constraint firstItem="5vo-cT-NPS" firstAttribute="trailing" secondItem="Bok-tb-1X0" secondAttribute="trailing" constant="16" id="TZF-lT-ec7"/>
                             <constraint firstItem="Bok-tb-1X0" firstAttribute="centerX" secondItem="bZP-aA-77k" secondAttribute="centerX" id="ZcZ-Lh-BOE"/>
-                            <constraint firstItem="5vo-cT-NPS" firstAttribute="bottom" secondItem="Bok-tb-1X0" secondAttribute="bottom" constant="244" id="izp-vo-6Hr"/>
+                            <constraint firstItem="5vo-cT-NPS" firstAttribute="trailing" secondItem="oMc-fv-Lcg" secondAttribute="trailing" constant="64" id="enY-lQ-tSt"/>
+                            <constraint firstItem="5vo-cT-NPS" firstAttribute="bottom" secondItem="Bok-tb-1X0" secondAttribute="bottom" constant="16" id="izp-vo-6Hr"/>
                             <constraint firstItem="Bok-tb-1X0" firstAttribute="top" secondItem="7jI-tp-aN5" secondAttribute="bottom" constant="96" id="lvF-Se-96L"/>
+                            <constraint firstItem="oMc-fv-Lcg" firstAttribute="top" secondItem="7jI-tp-aN5" secondAttribute="bottom" constant="40" id="vx0-YT-cmi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3dv-lU-fZn" customClass="de"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="imageView" destination="7jI-tp-aN5" id="6WE-6k-u29"/>
+                        <outlet property="labelText" destination="oMc-fv-Lcg" id="44B-2b-JlL"/>
                         <outlet property="textView" destination="Bok-tb-1X0" id="pgp-t0-2sl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFZ-dH-gEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="51"/>
+            <point key="canvasLocation" x="1292.753623188406" y="50.892857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VsB-xs-Ayy">
