@@ -81,6 +81,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3dv-lU-fZn" customClass="de"/>
+                    <connections>
+                        <outlet property="imageView" destination="7jI-tp-aN5" id="6WE-6k-u29"/>
+                        <outlet property="textView" destination="Bok-tb-1X0" id="pgp-t0-2sl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFZ-dH-gEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
