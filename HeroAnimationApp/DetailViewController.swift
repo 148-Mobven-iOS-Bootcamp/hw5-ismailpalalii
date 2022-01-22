@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
+    // MARK: Create selected variable
     var cityNames = ""
     var cityDescription = ""
     var images = UIImage()
